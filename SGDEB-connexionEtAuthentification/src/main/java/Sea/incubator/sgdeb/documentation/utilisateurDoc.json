@@ -1,0 +1,247 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"title": "API Utilisateur",
+		"version": "1.0.0",
+		"description": "Documentation de l'API utilisateur pour la gestion des comptes."
+	},
+	"servers": [
+		{
+			"url": "http://127.0.0.1:3000"
+		}
+	],
+	"paths": {
+		"/inscription": {
+			"post": {
+				"summary": "Inscription d'un nouvel utilisateur",
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Utilisateur"
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "Inscription réussie"
+					},
+					"400": {
+						"description": "Erreur lors de l'inscription"
+					}
+				}
+			}
+		},
+		"/activation": {
+			"post": {
+				"summary": "Activation d'un compte utilisateur",
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"token": {
+										"type": "string"
+									}
+								},
+								"required": ["token"]
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Activation réussie"
+					},
+					"400": {
+						"description": "Erreur lors de l'activation"
+					}
+				}
+			}
+		},
+		"/modifier-mot-de-passe": {
+			"post": {
+				"summary": "Modification du mot de passe",
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"email": {
+										"type": "string"
+									}
+
+								},
+								"required": ["email"]
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Mot de passe modifié avec succès"
+					},
+					"400": {
+						"description": "Erreur lors de la modification du mot de passe"
+					}
+				}
+			}
+		},
+		"/nouveau-mot-de-passe": {
+			"post": {
+				"summary": "Création d'un nouveau mot de passe",
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"token": {
+										"type": "string"
+									},
+									"nouveauMotDePasse": {
+										"type": "string"
+									}
+								},
+								"required": ["token", "nouveauMotDePasse"]
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "Nouveau mot de passe créé avec succès"
+					},
+					"400": {
+						"description": "Erreur lors de la création du nouveau mot de passe"
+					}
+				}
+			}
+		},
+		"/refresh-token": {
+			"post": {
+				"summary": "Rafraîchir le token JWT",
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"refreshToken": {
+										"type": "string"
+									}
+								},
+								"required": ["refreshToken"]
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Token rafraîchi avec succès",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"token": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/deconnexion": {
+			"post": {
+				"summary": "Déconnexion d'un utilisateur",
+				"responses": {
+					"200": {
+						"description": "Déconnexion réussie"
+					}
+				}
+			}
+		},
+		"/connexion": {
+			"post": {
+				"summary": "Connexion d'un utilisateur",
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/AuthentificationDTO"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Connexion réussie",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"token": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "Erreur d'authentification"
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"Utilisateur": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer"
+					},
+					"nom": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string",
+						"format": "email"
+					},
+					"motDePasse": {
+						"type": "string"
+					}
+				},
+				"required": ["nom", "email", "motDePasse"]
+			},
+			"AuthentificationDTO": {
+				"type": "object",
+				"properties": {
+					"username": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				},
+				"required": ["username", "password"]
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+### GET request to example server
+POST http://localhost:8000/api/academics/add/person
+Content-Type: application/json
+
+{
+  "nomPersonne": "Danbogo"
+}
+
+
+###
+GET http://localhost:8000/api/academics/Dany
+Accept: application/json
+
+###
+GET http://localhost:8000/api/academics/d8f70252-993c-4eb2-ba92-29fc8f8a696e/person
+Accept: application/json
+
+###
+GET http://localhost:8000/api/academics/all/person
+Accept: application/json
+
+### the error return
+PUT http://localhost:8000/api/academics/d8f70252-993c-4eb2-ba92-29fc8f8a69/change
+Content-Type: application/json
+
+{
+  "nomPersonne": "Danzo"
+}
+
+###
+PUT http://localhost:8000/api/academics/d8f70252-993c-4eb2-ba92-29fc8f8a696e/change
+Content-Type: application/json
+
+{
+  "nomPersonne": "Danilo"
+}
+
+###
+DELETE http://localhost:8000/api/academics/d8f70252-993c-4eb2-ba92-29fc8f8a696/delete
+Accept: application/json
+###
+DELETE  http://localhost:8000/api/academics/d8f70252-993c-4eb2-ba92-29fc8f8a696e/delete
+Accept: application/json

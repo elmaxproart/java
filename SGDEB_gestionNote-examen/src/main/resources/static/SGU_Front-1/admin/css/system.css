@@ -1,0 +1,226 @@
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+ CSS Document */
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #ededed;
+  /*line-height: 1.625;*/
+  font-size: 13px;
+  line-height: 1.6;
+  padding-top: 50px;
+}
+ul, li {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #999;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+a.haut {
+  display: none;
+}
+a.visible {
+  display: inline-block;
+  position: fixed;
+  bottom: 5%;
+  right: 1%;
+  padding: 5px 10px;
+  font-size: 18px;
+  color: #fff;
+  background-color: rgba(0,0,0,.5);
+  border-radius: 5px;
+  z-index: 10;
+}
+a.more {
+  display: inline-block;
+  /*float: right;*/
+  color: #232323;
+}
+p {
+  font-weight: 400;
+  line-height: 1.9em;
+  position: relative;
+}
+
+/******************************Entete*************************************/
+.admin-page-entete {
+  background-color: #e0e0d8;
+}
+.connexion {
+  padding: 2px 0;
+}
+.connexion .btn {
+  border-radius: 20px;
+  font-size: 12px;
+  padding: 3px 10px;
+}
+.connexion .btn-default {
+  background-color: #ff8400;
+  color: #fff;
+  border-color: #c26400;
+}
+.connexion .btn-default:hover {
+  background-color: #e77800;
+}
+.ariane .breadcrumb {
+  background-color: transparent;
+  font-size: 12px;
+}
+.ariane .breadcrumb a {
+  color: #0074BD;
+}
+
+/******************************admin sections*************************************/
+.admin-section-title h2 {
+  margin: 0;
+  padding: 0;
+}
+.admin-sub-sections .btn {
+  height: 2.60em;
+  line-height: 2.60em;
+  padding: 0 18px 8px;
+  background-color: #232323;
+  color: #fff;
+  font-weight: bold;
+  border-width: 1px 1px 0 1px;
+  border-style: solid;
+  border-color: #a6a7a2;
+  -moz-border-radius: 8px 8px 0 0;
+  -webkit-border-top-left-radius: 8px;
+  -webkit-border-top-right-radius: 8px;
+  border-radius: 8px 8px 0 0;
+  text-transform: uppercase;
+}
+.admin-sub-sections .btn:hover {
+  color: #ff8400;
+}
+.admin-sub-sections .active .btn {
+  color: #232323;
+  background-color: #fff;
+  border-color: #c9cac4;
+}
+
+/******************************admin page content*************************************/
+.admin-page-content {
+  background-color: #fff;
+  overflow-x: auto;
+  padding: 30px 0;
+  max-width: 100%;
+}
+.admin-page-content a {
+  color: #0074BD;
+}
+.admin-page-content .admin-page-filter {
+  border: 1px solid #ccc;
+  padding: 1em;
+  position: relative;
+  margin: 1em 0;
+}
+
+.admin-page-content .control-label {
+  text-align: left;
+}
+.filtre-affichage {
+  /*padding: 30px;*/
+}
+.admin-page-filter h4 {
+  font-weight: bold;
+  font-size: 14px;
+}
+.admin-page-filter .form-control {
+  height: 30px;
+  padding: 3px 12px;
+}
+.filter-btn .btn {
+  border-radius: 20px;
+  color: #ff8400;
+  background-color: #e0e0e0;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.filter-btn .btn:hover {
+  background-color: #232323;
+}
+
+.tableau table {
+  width: 100%;
+  font-size: 0.923em;
+  margin: 0 0 10px;
+  border: 1px solid #bebfb9;
+  font: normal /*81.3%/1.538em*/ "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+}
+
+.tableau table td, table th {
+  vertical-align: middle;
+  padding: 3px 10px;
+  border: 0;
+  color: #000;
+}
+.tableau table th {
+  text-transform: uppercase;
+  background: #232323;
+  color: #fff;
+  font-weight: bold;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #bebfb9;
+  padding: 3px 10px;
+}
+.tableau table th a {
+  color: #47b8ff;
+}
+.tableau .table > thead > tr > th.active {
+  background: #111;
+}
+.tableau .table > thead > tr > th.active a {
+  position: relative;
+  display: block;
+  padding-right: 20px;
+}
+.tableau .table > thead > tr > th.active img {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+.tableau .table > thead > tr > th.up img {
+  transform: rotate(180deg);
+}
+table tr th:first-child {
+  width: 1px;
+}
+.tableau table thead {
+  font-size: 13px;
+}
+/*.tableau table th {
+  text-transform: uppercase;
+  background: #e1e2dc;
+  font-weight: normal;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #bebfb9;
+  padding: 3px 10px;
+}*/
+
+@media screen and (max-width: 560px) {
+
+}
+
+@media screen and (max-width: 960px) {
+
+}
+
+
+/* media queries */
+@media all and (min-width: 600px) {
+
+}
+@media all and (min-width: 960px) {
+
+}

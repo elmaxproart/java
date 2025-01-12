@@ -1,0 +1,255 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"title": "API des Paiements",
+		"version": "1.0.0",
+		"description": "API pour la gestion des paiements des préinscriptions."
+	},
+	"servers": [
+		{
+			"url": "http://localhost:8000"
+		}],
+	"paths": {
+		"/api/PPaiements/add/paiement": {
+			"post": {
+				"summary": "Créer un paiement",
+				"description": "Cette méthode permet de créer un nouveau paiement.",
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/PayementPDTO"
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"description": "Paiement créé avec succès",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/PayementP"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Erreur de validation des données"
+					}
+				}
+			}
+		},
+		"/api/PPaiements/get/paiement": {
+			"get": {
+				"summary": "Obtenir tous les paiements",
+				"description": "Cette méthode permet de récupérer la liste de tous les paiements.",
+				"responses": {
+					"200": {
+						"description": "Liste des paiements récupérée avec succès",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/PayementP"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/PPaiements/get/paiement/{id}": {
+			"get": {
+				"summary": "Obtenir un paiement par ID",
+				"description": "Cette méthode permet de récupérer un paiement spécifique par son ID.",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Paiement trouvé",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/PayementP"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Paiement non trouvé pour l'ID donné"
+					}
+				}
+			}
+		},
+		"/api/PPaiements/put/paiement/{id}": {
+			"put": {
+				"summary": "Mettre à jour un paiement",
+				"description": "Cette méthode permet de mettre à jour un paiement existant par son ID.",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/PayementPDTO"
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "Paiement mis à jour avec succès",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/PayementP"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Paiement non trouvé pour l'ID donné"
+					},
+					"400": {
+						"description": "Erreur de validation des données"
+					}
+				}
+			}
+		},
+		"/api/PPaiements/delect/paiement/{id}/": {
+			"delete": {
+				"summary": "Supprimer un paiement",
+				"description": "Cette méthode permet de supprimer un paiement par son ID.",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer"
+						}
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Paiement supprimé avec succès"
+					},
+					"404": {
+						"description": "Paiement non trouvé pour l'ID donné"
+					}
+				}
+			}
+		},
+		"/api/PPaiements/verifier": {
+			"get": {
+				"summary": "Vérifier un paiement",
+				"description": "Cette méthode permet de vérifier un paiement par son code bancaire.",
+				"parameters": [
+					{
+						"name": "codeBank",
+						"in": "query",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Paiement vérifié avec succès",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/PayementP"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "Paiement non trouvé pour le code bancaire donné"
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"PayementP": {
+				"type": "object",
+				"properties": {
+					"payementId": {
+						"type": "integer"
+					},
+					"codeBank": {
+						"type": "string"
+					},
+					"banque": {
+						"type": "string"
+					},
+					"montant": {
+						"type": "number",
+						"format": "double"
+					},
+					"nomEtudiant": {
+						"type": "string"
+					},
+					"datecreation": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"anneeAcademique": {
+						"type": "string"
+					},
+					"niveau": {
+						"type": "string"
+					}
+				}
+			},
+			"PayementPDTO": {
+				"type": "object",
+				"properties": {
+					"codeBank": {
+						"type": "string"
+					},
+					"banque": {
+						"type": "string"
+					},
+					"montant": {
+						"type": "number",
+						"format": "double"
+					},
+					"nomEtudiant": {
+						"type": "string"
+					},
+					"anneeAcademique": {
+						"type": "string"
+					},
+					"niveau": {
+						"type": "string"
+					}
+				}
+			}
+		}
+	}
+}

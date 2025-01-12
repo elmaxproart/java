@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<head></head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FACTEASY :: GESTION ACADÉMIQUE</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="../../css/system.css" rel="stylesheet">
+    <link href="../../css/menu.css" rel="stylesheet">
+    <link href="../../css/headermenu.css" rel="stylesheet">
+</head>
+<body>
+<!-- Barre de navigation -->
+<header>
+    <div class="navbarHeader">
+        <div class="logoHeader">
+            <img src="../../images/image.png" alt="Logo" /></div>
+        <div class="titleHeader">SYGEN</div>
+        <button id="menuButton">MENU &#9776;</button>
+        <div class="search-bar">
+            <input type="text" placeholder="Rechercher des fonctions, des domaines ou de l’aide..." />
+        </div>
+        <div class="right-icons">
+            <i class="fas fa-user"></i>
+            <i class="fas fa-bell md-3"></i>
+            <i class="fas fa-envelope"></i>
+            <i class="fas fa-comments"></i>
+        </div>
+    </div>
+</header>
+
+<!-- Menu déroulant -->
+<nav id="menu" class="menu-hidden">
+    <div class="menu-container">
+        <button id="closeMenu" class="close-btn">&times;</button>
+        <div class="menu-items">
+            <button class="menu-item">
+                <i class="fas fa-user-plus"></i> Preinscription
+            </button>
+            <button class="menu-item">
+                <i class="fas fa-user-edit"></i> Inscription
+            </button>
+            <button class="menu-item">
+                <i class="fas fa-university"></i> Gestion Academiques
+            </button>
+            <button class="menu-item">
+                <i class="fas fa-keyboard"></i> Saisie de Notes
+            </button>
+            <button class="menu-item">
+                <i class="fas fa-users-cog"></i> Jury de Correction
+            </button>
+            <button class="menu-item">
+                <i class="fas fa-file-alt"></i> Production de Documents
+            </button>
+            <button class="menu-item">
+                <i class="fas fa-gavel"></i> Jury et Deliberation
+            </button>
+            <button class="menu-item">
+                <i class="fas fa-chart-line"></i> Reporting
+            </button>
+            <button class="menu-item">
+                <i class="fas fa-users"></i> Gestion du Personnel
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div class="main-content">
+    <div class="admin-page-entete">
+        <div class="ariane">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="breadcrumb">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Administration</a></li>
+                            <li>Gestion académique</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="admin-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="admin-section-title">
+                            <h2>Gestion de Production/Admissibilite</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="admin-page-content-delib">
+            <div class="container-fluid ">
+                <div class="admin-page-content-service">
+                    <div class="container-fluid">
+                        <div class="col-xs-3">
+                            <select class="form-control" id="procetVerbaleSelector">
+                                <option value="admis">Liste des Admis</option>
+                                <option value="echec">Liste des Echecs</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Tableau admis -->
+                    <div class="row" id="recapitulatifContent">
+                    <div class="row hidden" id="AdmisContent">
+                        <div class="col-md-2">
+                            <div class="filtre-affichage">
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label form="admin-page-statut" class="control-label col-xs-2">Année:</label>
+                                        <div class="col-xs-12">
+                                            <select id="anneeProc" class="form-control">
+                                                <option>2024</option>
+                                                <option>2023</option>
+                                                <option>2022</option>
+                                                <option>2021</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="filtre-affichage">
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label form="admin-page-statut" class="control-label col-xs-2">Filiere:</label>
+                                        <div class="col-xs-12">
+                                            <select id="filiereProc" class="form-control">
+                                                <option>Informatique</option>
+                                                <option>Mathematique</option>
+                                                <option>GeoSciences</option>
+                                                <option>GeosSciences</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="filtre-affichage">
+                                <form class="form-horizontal">
+                                    <div class="form-group">
+                                        <label form="admin-page-statut" class="control-label col-xs-2">Niveau:</label>
+                                        <div class="col-xs-12">
+                                            <select id="niveauProc" class="form-control">
+                                                <option>Licence 1</option>
+                                                <option>Licence 2</option>
+                                                <option>Licence 3</option>
+                                                <option>Master 1</option>
+                                                <option>Master 2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-1"></br>
+                            <div class="filter-btn">
+                                <a href="#" class="btn btn-default">Afficher</a>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="tableau">
+                                <table class="table table-condensed table-hover table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th class="numbers">No</th>
+                                        <th>Nom et Prenom</th>
+                                        <th>Matricule</th>
+                                        <th>Niveau</th>
+                                        <th>Moyenne</th>
+                                        <TH>ACTION</TH>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>0001</td>
+                                        <td>atangana jean vincet</td>
+                                        <td>24o9090</td>
+                                        <td>INF-L1</td>
+                                        <td>2.5</td>
+                                        <Td><a href="#">Modifier</a></Td>
+                                    </tr>
+                                    <tr>
+                                        <td>0001</td>
+                                        <td>atangana jean vincet</td>
+                                        <td>24o9090</td>
+                                        <td>INF-L1</td>
+                                        <td>3.0</td>
+                                        <td><a href="#">Modifier</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fin du contenu spécifique -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../js/Admis.js"></script>
+<script src="../../js/header.js"></script>
+</body>
+</html>

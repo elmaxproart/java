@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FACTEASY :: GESTION ACADÉMIQUE</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="../../css/system.css" rel="stylesheet">
+    <link href="../../css/menu.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="../../css/headermenu.css" rel="stylesheet">
+</head>
+<body>
+<!-- Barre de navigation -->
+<header>
+    <div class="navbarHeader">
+        <div class="logoHeader">
+            <img src="../../images/image.png" alt="Logo" /></div>
+        <div class="titleHeader">SYGEN</div>
+        <button id="menuButton">MENU &#9776;</button>
+        <div class="search-bar">
+            <input type="text" placeholder="Rechercher des fonctions, des domaines ou de l’aide..." />
+        </div>
+        <div class="right-icons">
+            <i class="fas fa-user"></i>
+            <i class="fas fa-bell md-3"></i>
+            <i class="fas fa-envelope"></i>
+            <i class="fas fa-comments"></i>
+        </div>
+    </div>
+</header>
+
+<!-- Menu déroulant-->
+<nav id="menu" class="menu-hidden">
+    <div class="menu-container">
+        <button id="closeMenu" class="close-btn">&times;</button>
+        <div class="menu-items">
+            <button class="menu-item">
+                <i class="fas fa-user-plus"></i> Preinscription
+            </button>
+            <button class="menu-item">
+                <i class="fas fa-user-edit"></i> Inscription
+            </button>
+            <button class="menu-item">
+                <i class="fas fa-university"></i><a href="acad.html">Gestion Academiques</a> 
+            </button>
+            <button class="menu-item">
+                <i class="fas fa-university"></i> <a href="../exams/exams.html"> Gestion Examens</a>
+             </button>
+            <button class="menu-item">
+                <i class="fas fa-keyboard"></i> Saisie de Notes
+            </button>
+            <button class="menu-item">
+                <i class="fas fa-users-cog"></i> Jury de Correction
+            </button>
+            <button class="menu-item">
+                <i class="fas fa-file-alt"></i> Production de Documents
+            </button>
+            <button class="menu-item">
+                <i class="fas fa-gavel"></i> Jury et Deliberation
+            </button>
+            <button class="menu-item">
+                <i class="fas fa-chart-line"></i> Reporting
+            </button>
+            <button class="menu-item">
+                <i class="fas fa-users"></i> Gestion du Personnel
+            </button>
+        </div>
+    </div>
+</nav>
+<div class="sidebar" id="mySidebar">
+    <div class="sidebar-header">
+        <a id="side-departement">Département</a>
+        <a id="side-filiere">Filière</a>
+        <a id="side-grille">Grille de Niveau</a>
+        <a id="side-unite">Unité</a>
+        <a id="side-ec">EC</a>
+        <a id="side-annee" href="annee.html">Année académique</a>
+    </div>
+    </div>
+</div>
+
+<div class="main-content mod-content">
+    <div class="admin-page-entete">
+        <div class="ariane">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="breadcrumb">
+                            <li><a href="../Auth/home.html">Home</a></li>
+                            <li><a href="#">Administration</a></li>
+                            <li><a href="acad.html">Gestion Académique</a></li>
+                            <li><a href="grille.html">Grille de Niveaux</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="admin-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="admin-section-title">
+                            <h2>Gestion académique</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="admin-page-content" id="form-grille">
+        <div class="container-fluid">
+            <form  class="anonym-form" id="form-grille">
+                <div class="field">
+                    <label for='name-grille'>Nom Grille</label>
+                    <input type="text" name="name-grille" id="name-grille" required>
+                </div>
+                <div class="field">
+                    <label for='code-grille'>Code Grille</label>
+                    <input type="text" name="code-grille" id="code-grille" required>
+                </div>
+                <div class="field">
+                    <label for='niveau-grille'>Niveau Grille</label>
+                    <select name="niveau-grille" id="niveau-grille" required>
+                        <option value="L1">L1</option>
+                        <option value="L2">L2</option>
+                        <option value="L3">L3</option>
+                        <option value="M1">M1</option>
+                        <option value="M2">M2</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for='annee-grille'>Année Grille</label>
+                    <select name="annee-grille" id="annee-grille" required>
+                        <option value="2011">2011-2012</option>
+                        <option value="2012">2012-2013</option>
+                        <option value="2013">2013-2014</option>
+                        <option value="2014">2014-2015</option>
+                        <option value="2015">2015-2016</option>
+                    </select>
+                </div>
+                <button  type="button" class="submit-btn" id="submit-grille">VALIDER</button>
+            </form>  
+        </div>
+    </div> <br>
+
+    <div class="admin-body" id="grille">
+        <div class="admin-page-content content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="add-content">
+                            <h4 class="content-title">GRILLES: FILIERE <span>ICT </span><em>-</em> DEPARTEMENT <span>INFORMATIQUE</span></h4>
+                            <form class="d-flex search" role="search">
+                                <input class="form-control me-2 search-text" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success search-btn" type="submit">Search</button>
+                            </form>
+                        </div>
+                        <!-- Contenu spécifique pour la gestion académique -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="tableau">
+                                    <table class="table table-bordered   table-hover table-striped container">
+                                        <thead>
+                                        <tr>
+                                            <th class="select-all"><input class="form-checkbox" title="Sélectionner toutes les lignes du tableau" type="checkbox"></th>
+                                            <th>Nom Grille</th>
+                                            <th>Code</th>
+                                            <th>Niveau</th>
+                                            <th>Année Académique</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td><input class="form-checkbox" title="Sélectionner cette ligne" type="checkbox"></td>
+                                            <td>grille1</td>
+                                            <td>ABC</td>
+                                            <td>L1</td>
+                                            <td>2010-2011</td>
+                                            <td><a href="#">modifier</a> | <a href="#">supprimer</a> | <a class="detail-grille" href="unite.html">Détails</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input class="form-checkbox" title="Sélectionner cette ligne" type="checkbox"></td>
+                                            <td>grille2</td>
+                                            <td>ABC</td>
+                                            <td>L1</td>
+                                            <td>2010-2011</td>
+                                            <td><a href="#">modifier</a> | <a href="#">supprimer </a> | <a class="detail-grille" href="unite.html">Détails</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input class="form-checkbox" title="Sélectionner cette ligne" type="checkbox"></td>
+                                            <td>grille3</td>
+                                            <td>ABC</td>
+                                            <td>L1</td>
+                                            <td>2010-2011</td>
+                                            <td><a href="#">modifier</a> | <a href="#">supprimer</a> | <a class="detail-grille" href="unite.html">Détails</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input class="form-checkbox" title="Sélectionner cette ligne" type="checkbox"></td>
+                                            <td>grille4</td>
+                                            <td>ABC</td>
+                                            <td>L1</td>
+                                            <td>2010-2011</td>
+                                            <td><a href="#">modifier</a> | <a href="#">supprimer</a> | <a class="detail-grille" href="unite.html">Détails</a></td>
+                                        </tr>
+                                        <!-- Ajoutez d'autres lignes ici -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fin du contenu spécifique -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="copyright">
+                    &copy; 2024 facteasy.net
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="owner text-right">
+                    Gerazayis
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="../../js/jquery.js"></script>
+<script src="../../js/header.js"></script>
+<script src="script.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="../../js/bootstrap.min.js"></script>
+</body>
+</html>

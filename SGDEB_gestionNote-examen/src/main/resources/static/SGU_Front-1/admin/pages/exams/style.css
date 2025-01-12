@@ -1,0 +1,159 @@
+body{
+  user-select: none;
+}
+.mod-content{
+  margin-left: 270px;
+  margin-top: 5px;
+}
+.breadcrumb button{
+  position: relative;
+  top:3px;
+}
+.field{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+}
+.anonym-form{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  gap:2%;
+}
+.dis-none{
+  display: none;
+}
+.submit-btn, .end-btn, .btn-import, .btn-type{
+  background: #232323;
+  color:white;
+  font-weight: bold;
+  border-radius: 15px;
+  padding: 8px 18px;
+  border: 1px solid black;
+}
+.btn-import{
+  position: relative;
+  top:-10px;
+  margin-bottom: 20px;
+}
+#btn-import2{
+  position: relative;
+  top:12px;
+}
+.end-btn{
+  position:relative;
+  top:40px;
+}
+
+.submit-btn:hover, .end-btn:hover, .btn-import:hover, .btn-type:hover{
+  color:#ff8400;
+}
+td{
+  font-size: 1.2em;
+}
+.add-content{
+  display:flex; flex-direction: row;
+  gap:15px;
+  margin-bottom: 10px;
+}
+.search{
+  display:flex; flex-direction: row;
+  align-items: center;
+  gap:5px;
+}
+.search button{
+  color: #232323;
+  font-weight: bold;
+}
+
+.section-doc{
+  display: flex;
+  gap:2%;
+}
+#drop-zone {
+  width: 70%;
+  height: 72vh;
+  border: 2px dashed #555;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 200px;
+  color:rgb(53, 168, 214);  /* #ccc;*/
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#drop-zone.hover {
+  border-color: #333;
+  color: #333;
+}
+#file-input {
+  display: none;
+}
+
+#btn-import1{
+  position: relative;
+  top: 20px;
+}
+
+.preview{
+  box-sizing: border-box;
+  width: 600px;
+  height: 66vh;
+  object-fit: cover;
+  padding: 5px;
+  background-color: rgb(215, 233, 240);
+  border-radius: 10px;
+  border: 1px solid rgb(212, 210, 210);
+  color:#555;
+  display: flex;
+  flex-direction: column;
+  gap:50px;
+}
+.warning-text{
+  box-sizing: border-box;
+  width: 300px;
+  height: 30px;
+  object-fit: cover;
+  padding: 5px;
+  background-color: rgb(215, 233, 240);
+  border-radius: 10px;
+  border: 1px solid rgb(212, 210, 210);
+  font-weight: bold;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:tomato;
+  position: relative;
+  top:-50px;
+  left:87px;
+}
+.section-selec{
+  margin-bottom: 30px;
+  padding-bottom: 10;
+}
+.section-selec .field-note input{
+  background-color:#e9e9ed;
+  text-align: center;
+  width: 120px;
+  border-radius: 5px;
+}
+.field-file{
+  background-color: #434141;
+  color:#ff8400;
+}
+.section-selec .field-note input:hover{
+  background-color: rgb(215, 233, 240);
+  font-weight: bold;
+}
+.note-form select, .note-form input{
+  font-size: 1.2em;
+}
+.note-form th{
+  font-size: 1.1em;
+}
+
+
